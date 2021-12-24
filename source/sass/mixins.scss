@@ -4,54 +4,82 @@
   }
 }
 
-// Desktop first
-
-@mixin viewport--xl {
-  @media (max-width: $viewport--xxl - 1) {
+@mixin viewport--1919 {
+  @media (max-width: 1919px) {
     @content;
   }
 }
 
-@mixin viewport--lg {
-  @media (max-width: $viewport--xl - 1) {
+@mixin viewport--1440 {
+  @media (max-width: 1440px) {
     @content;
   }
 }
 
-@mixin viewport--md {
-  @media (max-width: $viewport--lg - 1) {
+@mixin viewport--1439 {
+  @media (max-width: 1439px) {
     @content;
   }
 }
 
-@mixin viewport--sm {
-  @media (max-width: $viewport--md - 1) {
+@mixin viewport--1365 {
+  @media (max-width: 1365px) {
     @content;
   }
 }
 
-// Mobile first
-
-/* @mixin viewport--md {
-  @media (min-width: $viewport--md) {
+@mixin viewport--1279 {
+  @media (max-width: 1279px) {
     @content;
   }
 }
 
-@mixin viewport--lg {
-  @media (min-width: $viewport--lg) {
+@mixin viewport--1023 {
+  @media (max-width: 1023px) {
     @content;
   }
 }
 
-@mixin viewport--xl {
-  @media (min-width: $viewport--xl) {
+@mixin viewport--767 {
+  @media (max-width: 767px) {
     @content;
   }
 }
 
-@mixin viewport--xxl {
-  @media (min-width: $viewport--xxl) {
+@mixin viewport--425 {
+  @media (max-width: 425px) {
     @content;
   }
-} */
+}
+
+@mixin viewport--374 {
+  @media (max-width: 374px) {
+    @content;
+  }
+}
+
+@mixin adaptiveFull($property, $startSize, $midSize, $endSize) {
+  $addSizeMid: $startSize - $midSize;
+  $addSizeEnd: $midSize - $endSize;
+  #{$property}: $startSize + px;
+  @media (min-width: #{$midWidth + px}) {
+    #{$property}: calc(#{$midSize + px} + #{$addSizeMid} * ((100vw - #{$midWidth + px}) / #{$startWidth - $midWidth}));
+  }
+  @media (max-width: #{$midWidth + px}) {
+    #{$property}: calc(#{$endSize + px} + #{$addSizeEnd} * ((100vw - #{$endWidth + px}) / #{$midWidth - $endWidth}));
+  }
+}
+
+@mixin adaptiveDesktopToMobile($property, $startSize, $endSize) {
+  $addSize: $startSize - $endSize;
+  #{$property}: $startSize + px;
+  @media (max-width: #{$startWidth + px}) {
+    #{$property}: calc(#{$endSize + px} + #{$addSize} * ((100vw - #{$endWidth + px}) / #{$startWidth - $endWidth}));
+  }
+}
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

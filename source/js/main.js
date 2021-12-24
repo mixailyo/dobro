@@ -1,15 +1,5 @@
-import {ieFix} from './utils/ie-fix';
-import {iosVhFix} from './utils/ios-vh-fix';
+import {mainSlider} from './components/main-slider';
+import {unlockerCards} from './components/unlocker-cards';
 
-import {initModals} from './modules/init-modals';
-
-// Utils
-// ---------------------------------
-
-ieFix();
-iosVhFix();
-
-// Modules
-// ---------------------------------
-
-initModals();
+mainSlider();
+unlockerCards();

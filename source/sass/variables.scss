@@ -12,7 +12,7 @@ $color-transparent:               rgba(255, 255, 255, 0);
 
 $color-black:                     #0e0e0e;
 $color-white:                     #f2f2f2;
-$color-blue:                      #2c39f2;
+$color-blue:                      #005FF9;
 
 // Gradient
 
@@ -21,25 +21,13 @@ $black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0
 // Typography
 //---------------------------------
 
-$font-family--:                     "", "Arial", sans-serif;
+$font-family--default:                     'Mail Sans Roman', "Arial", sans-serif;
 
-// Animation
-//---------------------------------
-
-$default-transition-settings:       0.3s ease;
-$modal-transition-settings:         0.6s cubic-bezier(0.55, 0, 0.1, 1);
+$transition-timing-function--default: cubic-bezier(0.12, 0, 0.39, 0);
 
 // Viewports
 //---------------------------------
 
-$viewport--sm:                      320px;
-$viewport--md:                      768px;
-$viewport--lg:                      1024px;
-$viewport--xl:                      1440px;
-$viewport--xxl:                     1920px;
-
-// Retina
-//---------------------------------
-
-$retina-dpi:                        144dpi;
-$retina-dppx:                       1.5dppx;
+$startWidth: 1920;
+$midWidth: 768;
+$endWidth: 375;
